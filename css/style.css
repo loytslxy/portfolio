@@ -10,6 +10,7 @@
   --ink-soft: #6b665e;     /* 次级文字 */
   --line: #d8d2c6;         /* 分割线 */
   --accent: #d43a1f;       /* 主强调色：朱红 */
+  --code-bg: #ece7dc;      /* 行内代码底色 */
 
   /* 类别色块（新增类别时在此登记颜色） */
   --cat-Web网站: #1f4fa3;
@@ -20,6 +21,20 @@
   --container: 1180px;
   --gutter: clamp(20px, 5vw, 64px);
 }
+
+/* ---------- 深色主题 ---------- */
+html[data-theme="dark"] {
+  --paper: #16150f;        /* 深色底 */
+  --ink: #ece7dc;          /* 浅色文字 */
+  --ink-soft: #9a948a;     /* 次级文字 */
+  --line: #35322a;         /* 分割线 */
+  --accent: #e8542f;       /* 主强调色：朱红（深色下略提亮） */
+  --code-bg: #2a271f;
+  --cat-Web网站: #5b8ae0;
+}
+
+/* 主题切换时背景/文字平滑过渡 */
+body { transition: background-color .35s ease, color .35s ease; }
 
 /* ---------- 基础 ---------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -85,6 +100,8 @@ ul, ol { list-style: none; }
 .nav__logo-cn { font-family: var(--serif); font-size: 22px; font-weight: 700; }
 .nav__logo-en { font-size: 10px; letter-spacing: 0.28em; color: var(--ink-soft); }
 
+.nav__right { display: flex; align-items: center; gap: clamp(12px, 2vw, 24px); }
+
 .nav__menu { display: flex; gap: clamp(20px, 3vw, 40px); }
 .nav__link {
   position: relative;
@@ -125,6 +142,24 @@ ul, ol { list-style: none; }
 }
 .nav__toggle.is-open span:nth-child(1) { transform: translateY(4px) rotate(45deg); }
 .nav__toggle.is-open span:nth-child(2) { transform: translateY(-4px) rotate(-45deg); }
+
+/* 主题切换按钮 */
+.nav__theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: none;
+  color: var(--ink);
+  cursor: pointer;
+  transition: border-color .25s ease, color .25s ease, transform .25s ease;
+}
+.nav__theme:hover { border-color: var(--accent); color: var(--accent); transform: rotate(15deg); }
+.nav__theme-icon--moon { display: none; }
+html[data-theme="dark"] .nav__theme-icon--sun { display: none; }
+html[data-theme="dark"] .nav__theme-icon--moon { display: block; }
 
 /* ---------- 首屏 ---------- */
 .hero {
@@ -264,7 +299,7 @@ ul, ol { list-style: none; }
 .works__note code {
   font-family: ui-monospace, Consolas, monospace;
   font-size: 12px;
-  background: #ece7dc;
+  background: var(--code-bg);
   padding: 2px 6px;
   border-radius: 3px;
 }

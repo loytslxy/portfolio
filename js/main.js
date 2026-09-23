@@ -98,7 +98,36 @@
     els.forEach((el) => io.observe(el));
   }
 
-  /* ---------- 5. 初始化 ---------- */
+  /* ---------- 5. 深浅色主题切换 ---------- */
+  const THEME_KEY = "theme";
+  const themeBtn = document.getElementById("themeToggle");
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    if (themeBtn) {
+      const label = theme === "dark" ? "切换浅色主题" : "切换深色主题";
+      themeBtn.setAttribute("aria-label", label);
+      themeBtn.title = label;
+    }
+  }
+
+  function initTheme() {
+    let saved = null;
+    try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* 隐私模式下忽略 */ }
+    applyTheme(saved === "dark" ? "dark" : "light");
+  }
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
+      const next =
+        document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* 忽略 */ }
+    });
+  }
+
+  /* ---------- 6. 初始化 ---------- */
+  initTheme();
   renderProjects();
   setupReveal();
   onScroll();
