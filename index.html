@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>李晓莹 — 作品集 | Portfolio</title>
+  <meta name="description" content="李晓莹的个人作品集：前端网页开发与 AI 辅助应用开发。" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== 顶部导航 ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner container">
+      <a class="nav__logo" href="#hero">
+        <span class="nav__logo-cn">李晓莹</span>
+        <span class="nav__logo-en">LI&nbsp;XIAOYING</span>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="nav__menu" id="navMenu">
+        <a href="#intro" class="nav__link">介绍</a>
+        <a href="#works" class="nav__link">作品</a>
+        <a href="#about" class="nav__link">关于我</a>
+        <a href="#contact" class="nav__link">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== 首屏 ===== -->
+    <section class="hero" id="hero">
+      <div class="container hero__grid">
+        <p class="hero__overline">PORTFOLIO — 2026</p>
+        <h1 class="hero__title">
+          把想法<br />
+          做成<em class="hero__accent">可使用</em><br />
+          的作品<span class="hero__dot">。</span>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__lede">
+            你好，我是李晓莹 —— 软件工程专业学生，目前主要关注前端网页开发和 AI 辅助应用开发技术。
+            这里收录了我的项目经历与作品，供老师、同学与企业招聘人员查阅。
+          </p>
+          <ul class="hero__meta">
+            <li><span class="hero__meta-num">01</span>前端网页开发</li>
+            <li><span class="hero__meta-num">02</span>AI 辅助应用开发</li>
+            <li><span class="hero__meta-num">03</span>数据可视化</li>
+          </ul>
+        </div>
+        <div class="hero__index" aria-hidden="true">
+          <a href="#works">精选作品 ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 个人介绍 + 技能方向 ===== -->
+    <section class="intro section" id="intro">
+      <div class="container intro__grid">
+        <div class="intro__text reveal">
+          <p class="section__overline">A. 介绍 / INTRODUCTION</p>
+          <h2 class="intro__heading">前端 × AI，<br />把想法做成可用的应用。</h2>
+          <p class="intro__body">
+            我叫李晓莹，是软件工程专业的学生，目前主要关注前端网页开发和 AI 辅助应用开发技术。
+            平时主要使用 Python、Java、JavaScript 等语言进行开发，
+            也在持续学习前后端开发、数据可视化和 AI 相关技术。
+          </p>
+        </div>
+        <div class="intro__skills reveal">
+          <h3 class="intro__skills-title">技能方向 / CAPABILITIES</h3>
+          <ol class="skill-list">
+            <li class="skill-list__item">
+              <span class="skill-list__num">01</span>
+              <div>
+                <h4>前端网页开发</h4>
+                <p>HTML、CSS、JavaScript</p>
+              </div>
+            </li>
+            <li class="skill-list__item">
+              <span class="skill-list__num">02</span>
+              <div>
+                <h4>AI 辅助应用开发</h4>
+                <p>当前主要关注方向</p>
+              </div>
+            </li>
+            <li class="skill-list__item">
+              <span class="skill-list__num">03</span>
+              <div>
+                <h4>开发语言</h4>
+                <p>Python、Java、JavaScript</p>
+              </div>
+            </li>
+            <li class="skill-list__item">
+              <span class="skill-list__num">04</span>
+              <div>
+                <h4>持续学习中</h4>
+                <p>前后端开发、数据可视化、AI 相关技术</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 项目作品（由 JS 渲染） ===== -->
+    <section class="works section" id="works">
+      <div class="container">
+        <div class="works__head reveal">
+          <p class="section__overline">B. 精选作品 / SELECTED WORKS</p>
+          <h2 class="works__heading">作品目录</h2>
+          <p class="works__note">以下项目按完成时间倒序排列，新增作品只需在 <code>js/projects.js</code> 中追加一条数据。</p>
+        </div>
+        <div class="works__list" id="projectsList"><!-- JS 注入 --></div>
+      </div>
+    </section>
+
+    <!-- ===== 关于我 ===== -->
+    <section class="about section" id="about">
+      <div class="container about__grid">
+        <figure class="about__media reveal">
+          <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=candid%20editorial%20photo%20of%20a%20young%20asian%20woman%20student%20coding%20on%20a%20laptop%20at%20a%20desk%20with%20notebook%2C%20warm%20window%20light%2C%20film%20photography%2C%20muted%20colors" alt="学习中的我" loading="lazy" />
+          <figcaption>前端 × AI · 持续学习中</figcaption>
+        </figure>
+        <div class="about__text reveal">
+          <p class="section__overline">C. 关于我 / ABOUT</p>
+          <blockquote class="about__quote">
+            软件工程专业的学生，<br />主要关注前端网页开发<br />与 AI 辅助应用开发。
+          </blockquote>
+          <p class="about__body">
+            平时主要使用 Python、Java、JavaScript 等语言进行开发，
+            也在持续学习前后端开发、数据可视化和 AI 相关技术。
+          </p>
+          <dl class="about__facts">
+            <div><dt>姓名</dt><dd>李晓莹</dd></div>
+            <div><dt>专业</dt><dd>软件工程</dd></div>
+            <div><dt>学校</dt><dd>广州软件学院 · 在读</dd></div>
+            <div><dt>城市</dt><dd>中国 · 广州</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 联系方式 ===== -->
+    <section class="contact section" id="contact">
+      <div class="container contact__inner">
+        <p class="section__overline">D. 联系 / CONTACT</p>
+        <h2 class="contact__heading">有想法想一起做？</h2>
+        <p class="contact__mail">广州 · 广州软件学院</p>
+        <p class="contact__hint">欢迎老师、同学与企业招聘人员与我联系。</p>
+      </div>
+      <footer class="footer">
+        <div class="container footer__inner">
+          <span>© <span id="year"></span> 李晓莹 LI XIAOYING</span>
+          <span>用原生 HTML / CSS / JS 手工排版</span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="js/projects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
